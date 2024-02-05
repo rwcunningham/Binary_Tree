@@ -21,8 +21,9 @@ struct bst_node {
 // greater than or equal to t's data value.
 class BST {
 public:
-  // The constructor initializes class variables and pointers here if needed.
-  // Set root to null.
+  
+  bst_node** root;
+  
   BST();
 
   // deconstructor - use this to clean up all memory that the BST has allocated
@@ -79,10 +80,16 @@ public:
 
   // you can add add more public member variables and member functions here if
   // you need
+  
+  void recursive_insert(bst_node* parent, bst_node* new_node);
+  
+  bst_node* get_predecessor(bst_node* node_to_find_buddy);
+  
+  bst_node* get_parent(bst_node* current_node, bst_node* child_node);
 
 private:
   // this double pointer always will point to the root pointer of the tree
-  bst_node** root;
+  // bst_node** root;
   // you can add add more private member variables and member functions here if
   // you need
 };
